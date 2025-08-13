@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Susovan Hati's portfolio showcasing frontend development and machine learning projects.">
+    <meta name="keywords" content="frontend developer, machine learning, web development, Susovan Hati">
+    <title>Susovan's Portfolio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="background-canvas"></canvas>
+    <nav class="navbar">
+        <a href="#" class="logo">SUSOVAN HATI</a>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <ul id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#About Me">About Me</a></li>
+            <li><a href="#Skills">Skills</a></li>
+            <li><a href="#project-info">Projects</a></li>
+            <li><a href="#Contact">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <section class="home" id="home" type="home">
+        <div class="home-img">
+            <div class="imgbox">
+                <div class="imgitem">
+                    <img src="susovan.jpg" alt="Susovan Hati's profile picture">
+                </div>
+            </div>
+        </div>
+        <div class="home-info">
+            <h1>Hi <span>e</span>veryone, <span>I</span>'m <span>S</span>usovan</h1>
+            <br>
+            <h2> I am a
+                <span style="--i:6;" data-text="Frontend Developer">Frontend Developer</span>
+                <span style="--i:5;" data-text="Software Engineer">Software Engineer</span>
+                <span style="--i:4;" data-text="Machine Learning Enthusiast">Machine Learning Enthusiast</span>
+                <span style="--i:3;" data-text="Coder">Coder</span>
+                <span style="--i:2;" data-text="Learner">Learner</span>
+                <span style="--i:1;" data-text="Executer">Executer</span>
+            </h2>
+            <p>A Frontend Developer having experience of building <br> websites with HTML, CSS, JavaScript, React, Node.js, and other libraries and frameworks. Also I am developing skills on machine learning & data science as an ML Enthusiast</p>
+            <div class="btn-sec">
+                <a href="https://drive.google.com/file/d/1KXJIUBzfP1lk4CwIkxY0q4IymTxnVQpE/view?usp=drivesdk" class="btn">Download Resume</a>
+                <div class="sec">
+                    <a href="https://github.com/SusovanGit10"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.linkedin.com/in/susovan-hati-a37178271"><i class='bx bxl-linkedin'></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section type="about">
+        <div class="AboutMe" id="About Me">
+            <div class="header">
+                <h1><span>A</span>bout <span>M</span>e</h1>
+            </div>
+            <div class="myself">
+                <p> I am Susovan, a passionate frontend developer & machine learning enthusiast, currently pursuing a Bachelor of Technology in Computer Science and Engineering at Techno India University. I have hands-on experience in HTML, CSS, JavaScript, React, Node.js, and version control with Git
+                    and GitHub. I am dedicated to creating responsive, user-friendly web applications and continuously enhancing my skills. Also I am building my skills on machine learning, data science, NLP with some industry based projects. Based in Kolkata, West Bengal, I aim to contribute to 
+                    innovative projects in the tech industry.</p>
+            </div>
+            <div class="aboutimg">
+                <img src="aboutme.jpg" alt="Susovan Hati's about me picture">
+            </div>
+        </div>
+    </section>
+
+    <section type="skills">
+        <div class="skill-info" id="Skills">
+            <div class="header">
+                <h1><span>S</span>kills</h1>
+            </div>
+            <div class="container">
+                <div class="skill-box">
+                    <div class="skill-title">
+                        <div class="imge">
+                            <img src="html5.png" alt="HTML5 logo">
+                        </div>
+                        <h3>HTML</h3>
+                    </div>
+                    <p> Proficient in semantic HTML5, building responsive and accessible web structures.
+                        Skilled in clean, maintainable code optimized for usability and cross-browser compatibility.</p>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-title">
+                        <div class="imge">
+                            <img src="css3.png" alt="CSS3 logo">
+                        </div>
+                        <h3>CSS</h3>
+                    </div>
+                    <p> Skilled in modern CSS3, creating responsive, visually appealing, and user-friendly designs.
+                        Experienced with Flexbox, Grid, and animations, focusing on clean, maintainable, and cross-browser compatible styles.</p>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-title">
+                        <div class="imge">
+                            <img src="javascript.png" alt="JavaScript logo">
+                        </div>
+                        <h3>JavaScript</h3>
+                    </div>
+                    <p> Capable in modern JavaScript (ES6+), creating dynamic and interactive web features.
+                        Skilled in DOM manipulation, event handling, and API integration with clean and efficient code.</p>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-title">
+                        <div class="imge">
+                            <img src="reactjs.png" alt="React.js logo">
+                        </div>
+                        <h3>React</h3>
+                    </div>
+                    <p> Competent in building dynamic, component-based UIs using React.js and modern JavaScript (ES6+).
+                        Skilled in state management, hooks, and API integration for responsive and maintainable web applications.</p>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-title">
+                        <div class="imge">
+                            <img src="nodejs.jpg" alt="Node.js logo">
+                        </div>
+                        <h3>Node JS</h3>
+                    </div>
+                    <p> Proficient in building scalable server-side applications using Node.js and Express.js.
+                        Skilled in API development, database integration, and efficient backend logic for robust web applications.</p>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-title">
+                        <div class="imge">
+                            <img src="languages.jpg" alt="C/C++ logo">
+                        </div>
+                        <h3>C/C++</h3>
+                    </div>
+                    <p> Skilled in C and C++, building efficient algorithms, data structures, and system-level programs.
+                        Skilled in Python for scripting, automation, and developing scalable applications with clean, readable code.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section type="projects">
+        <div class="project-info" id="project-info">
+            <div class="header">
+                <h1><span>P</span>rojects</h1>
+            </div>
+            <div class="container">
+                <div class="project-box">
+                    <div class="project-title">
+                        <div class="imge">
+                            <img src="careeresd.jpg" alt="Career Counseling project screenshot">
+                        </div>
+                        <h3>Career Councelling</h3>
+                    </div>
+                    <p> A comprehensive career counseling platform helping students and professionals make informed career choices. Offers personalized guidance, skill assessments, and mentorship to align strengths with opportunities.
+                        Designed with a user-friendly interface and interactive tools to enhance career planning and growth.</p>
+                </div>
+                <div class="project-box">
+                    <div class="project-title">
+                        <div class="imge">
+                            <img src="basiccalculator.png" alt="Basic Calculator project screenshot">
+                        </div>
+                        <h3>Basic Calculator</h3>
+                    </div>
+                    <p> Basic Calculator Application : <br> A simple and interactive calculator web app designed for performing basic arithmetic operations. Built with HTML, CSS, and JavaScript for a responsive and user-friendly experience.
+                        Features a clean interface and smooth functionality for quick and accurate calculations.
+                    </p>
+                </div>
+                <div class="project-box">
+                    <div class="project-title">
+                        <div class="imge">
+                            <img src="landingpage.jpg" alt="Susovan's landing page screenshot">
+                        </div>
+                        <h3>Susovan's page</h3>
+                    </div>
+                    <p> Landing page : <br> A modern, responsive landing page designed to showcase products, services, or personal projects effectively. Focused on clean UI/UX, fast performance, and engaging visuals to capture visitor attention.
+                        Built with semantic HTML, CSS, and interactive elements for a professional and user-friendly experience.
+                    </p>
+                </div>
+                <div class="project-box">
+                    <div class="project-title">
+                        <div class="imge">
+                            <img src="allinonescientific.png" alt="All In One Scientific Calculator project screenshot">
+                        </div>
+                        <h3>All In One & Scientific Calculator</h3>
+                    </div>
+                    <p> All In One & Scientific Calculator : <br> An all-in-one calculator web app featuring scientific calculations, unit conversion, and linear & polynomial equation solving.
+                        Built with HTML, CSS, and JavaScript for a responsive, interactive, and user-friendly experience.
+                        Designed for efficiency and accuracy, providing multiple calculation tools in a single, clean interface.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section type="contact">
+        <div class="contact-info" id="Contact">
+            <h1><span>C</span>ontact <span>m</span>e</h1>
+            <h3>
+                <span>Contact No : +91 8509674452</span>
+                <span>Email Id : susovanhatiinfinity@gmail.com</span>
+            </h3>
+        </div>
+    </section>
+
+    <section type="footer">
+        <div class="footercontainer">
+            <div class="btn-sec">
+                <div class="sec">
+                    <a href="https://github.com/SusovanGit10"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.linkedin.com/in/susovan-hati-a37178271"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://twitter.com/yourprofile"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://instagram.com/yourprofile"><i class='bx bxl-instagram-alt'></i></a>
+                </div>
+            </div>
+            <div class="footer">
+                <p>Copyright &copy;2025 : Designed by<span class="designer"> Susovan </span></p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
