@@ -1,3 +1,11 @@
+:root {
+    --primary-color: #00ffcc;
+    --secondary-color: #ccc;
+    --primary-font: Georgia, 'Times New Roman', Times, serif;
+    --shadow-color: rgba(0, 255, 204, 0.5);
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -13,6 +21,7 @@ body {
     position: relative;
 }
 
+
 #background-canvas {
     position: fixed;
     top: 0;
@@ -22,6 +31,7 @@ body {
     z-index: -1;
 }
 
+/* Navbar Styles */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -40,8 +50,9 @@ body {
     font-weight: bold;
     color: #fff;
     text-decoration: none;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: var(--primary-font);
 }
+
 
 .navbar ul {
     list-style: none;
@@ -56,15 +67,15 @@ body {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
-    transition: color 0.3s;
+    transition: color 0.3s, font-size 0.3s;
 }
 
 .navbar ul li a:hover {
-    color: #00ffcc;
+    color: var(--primary-color);
     cursor: pointer;
     font-size: 25px;
-    transition: .3s;
 }
+
 
 .menu-icon {
     display: none;
@@ -96,6 +107,7 @@ body {
     }
 }
 
+
 .home {
     display: flex;
     justify-content: center;
@@ -118,7 +130,7 @@ body {
     margin: 10px 0;
     position: relative;
     display: inline-block;
-    color: #00ffcc;
+    color: var(--primary-color);
     animation: morph 3s ease-in-out infinite;
 }
 
@@ -136,32 +148,163 @@ body {
     display: inline-block;
     position: relative;
     color: transparent;
-    -webkit-text-stroke: 1px #00ffcc;
-    text-shadow: 0 0 2px #00ffcc; 
+    -webkit-text-stroke: 1px var(--primary-color);
+    text-shadow: 0 0 2px var(--primary-color);
     animation: colorShift 4s linear infinite;
 }
 
 @keyframes colorShift {
-    0% { color: #00ffcc; }
+    0% { color: var(--primary-color); }
     25% { color: #ff00cc; }
     50% { color: #00ccff; }
     75% { color: #ccff00; }
-    100% { color: #00ffcc; }
+    100% { color: var(--primary-color); }
 }
 
 .home-info h2 {
-            font-size: 30px;
-            display: inline-block;
-        }
+    font-size: 30px;
+    display: inline-block;
+}
 
 .home-info h2 span {
-            display: inline-block;
-            position: relative;
-            color: transparent;
-            -webkit-text-stroke: 1px #00ffcc;
-            animation: display-text 16s linear infinite;
-            animation-delay: calc(-4s *var(--i));
-        }
+    display: inline-block;
+    position: relative;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--primary-color);
+    animation: display-text 16s linear infinite;
+    animation-delay: calc(-4s * var(--i));
+}
+
+@keyframes display-text {
+    25%, 100% { display: none; }
+}
+
+.home-info h2 span::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    border-right: 2px solid var(--shadow-color);
+    color: var(--primary-color);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: fill-text 4s linear infinite;
+}
+
+@keyframes fill-text {
+    10%, 100% { width: 0; }
+    70%, 90% { width: 100%; }
+}
+
+.home-info p {
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+    color: var(--secondary-color);
+}
+
+.btn-sec {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--primary-color);
+    border-radius: 40px;
+    box-shadow: 0 0 10px var(--primary-color);
+    font-size: 16px;
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: .5s;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: var(--primary-color);
+    color: #000;
+    box-shadow: none;
+    transform: scale(1.1);
+}
+
+.home-info .btn-sec .sec a {
+    display: inline-flex;
+    padding: 8px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    font-size: 20px;
+    color: var(--primary-color);
+    margin: 0 10px;
+    transition: .5s;
+    text-decoration: none;
+}
+
+.home-info .btn-sec .sec a:hover {
+    background-color: var(--primary-color);
+    color: #000;
+    box-shadow: 0 0 10px #fff;
+    transform: scale(1.2);
+}
+
+.home-img .imgbox {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    width: 28vw;
+    height: 28vw;
+    border-radius: 50%;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.home-img .imgbox::before,
+.home-img .imgbox::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: conic-gradient(transparent, transparent, transparent, var(--primary-color));
+    transform: rotate(0deg);
+    animation: rotate-border 5s linear infinite;
+}
+
+@keyframes rotate-border {
+    100% { transform: rotate(360deg); }
+}
+
+.home-img .imgbox .imgitem {
+    width: 100%;
+    height: 100%;
+    background: rgba(41, 40, 40, 0.8);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    z-index: 1;
+    justify-content: center;
+    border: 1px solid var(--shadow-color);
+    overflow: hidden;
+}
+
+.home-img .imgbox .imgitem img {
+    position: absolute;
+    display: block;
+    top: -18px;
+    width: 130%;
+    object-fit: cover;
+    mix-blend-mode: lighten;
+    transition: transform 0.3s;
+}
+
+.home-img .imgbox .imgitem img:hover {
+    transform: scale(1.1);
+}
 
 
 .AboutMe {
@@ -175,7 +318,7 @@ body {
 .AboutMe .header h1 {
     font-size: 32px;
     margin-bottom: 30px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: var(--primary-font);
 }
 
 .AboutMe .header h1:hover {
@@ -189,7 +332,7 @@ body {
     margin: 0 auto;
     font-size: 16px;
     line-height: 1.6;
-    color: #ccc;
+    color: var(--secondary-color);
 }
 
 .aboutimg img {
@@ -205,6 +348,7 @@ body {
     transform: scale(1.1);
 }
 
+
 .skill-info {
     padding: 80px 20px;
     background: rgba(249, 249, 249, 0.1);
@@ -216,7 +360,7 @@ body {
 .skill-info .header h1 {
     font-size: 32px;
     margin-bottom: 30px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: var(--primary-font);
 }
 
 .skill-info .header h1:hover {
@@ -239,7 +383,7 @@ body {
     width: 100%;
     max-width: 350px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 255, 204, 0.2);
+    box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 .skill-box img {
@@ -263,6 +407,7 @@ body {
     transition: 0.3s;
 }
 
+
 .project-info {
     padding: 80px 20px;
     background: rgba(255, 255, 255, 0.1);
@@ -274,7 +419,7 @@ body {
 .project-info .header h1 {
     font-size: 32px;
     margin-bottom: 30px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: var(--primary-font);
 }
 
 .project-info .header h1:hover {
@@ -290,11 +435,11 @@ body {
     width: 100%;
     max-width: 350px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 255, 204, 0.2);
+    box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 .project-box h3 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: var(--primary-font);
     text-decoration: underline;
     font-weight: 700;
     margin: 10px;
@@ -318,6 +463,7 @@ body {
     transform: scale(1.1);
 }
 
+
 .contact-info {
     text-align: center;
     padding: 50px;
@@ -330,7 +476,7 @@ body {
 .contact-info h1 {
     font-size: 32px;
     margin-bottom: 30px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: var(--primary-font);
 }
 
 .contact-info h1:hover {
@@ -355,7 +501,7 @@ body {
 }
 
 .footercontainer .btn-sec .sec a:hover {
-    background-color: #00ffcc;
+    background-color: var(--primary-color);
     color: #000;
     box-shadow: 0 0 10px #fff;
     border-radius: 25%;
