@@ -238,7 +238,8 @@ section.visible {
     transform: scale(1.1);
 }
 
-.home-info .btn-sec .sec a {
+.home-info .btn-sec .sec a,
+.contact-info .btn-sec .sec a {
     display: inline-flex;
     padding: 8px;
     border-radius: 50%;
@@ -250,7 +251,8 @@ section.visible {
     text-decoration: none;
 }
 
-.home-info .btn-sec .sec a:hover {
+.home-info .btn-sec .sec a:hover,
+.contact-info .btn-sec .sec a:hover {
     background-color: var(--primary-color);
     color: #000;
     box-shadow: 0 0 10px #fff;
@@ -485,32 +487,12 @@ section.visible {
     margin: 5px 0;
 }
 
-.footercontainer {
-    text-align: center;
-    padding: 20px;
-    background: rgba(34, 34, 34, 0.8);
-    color: white;
-}
-
-.footercontainer .btn-sec .sec a:hover {
-    background-color: var(--primary-color);
-    color: #000;
-    box-shadow: 0 0 10px #fff;
-    border-radius: 25%;
-}
-
-.footercontainer .sec a {
-    color: white;
-    font-size: 24px;
-    margin: 10px;
-}
-
-.footercontainer .footer p {
+.contact-info .footer p {
     margin: 15px;
     font-size: 14px;
 }
 
-.footercontainer .footer .designer {
+.contact-info .footer .designer {
     font-weight: bold;
     color: #00aaff;
 }
