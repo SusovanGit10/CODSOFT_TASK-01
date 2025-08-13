@@ -174,15 +174,17 @@ section.visible {
 
 .home-info h2 span {
     display: inline-block;
-    position: relative;
+    position: absolute;
+    left: 0;
     color: transparent;
     -webkit-text-stroke: 1px var(--primary-color);
-    animation: display-text 16s linear infinite;
-    animation-delay: calc(-4s * var(--i));
+    animation: display-text 24s linear infinite;
+    animation-delay: calc(4s * (6 - var(--i)));
 }
 
 @keyframes display-text {
-    25%, 100% { display: none; }
+    0%, 16.67% { opacity: 1; }
+    16.68%, 100% { opacity: 0; }
 }
 
 .home-info h2 span::before {
@@ -194,11 +196,13 @@ section.visible {
     white-space: nowrap;
     overflow: hidden;
     animation: fill-text 4s linear infinite;
+    animation-delay: calc(4s * (6 - var(--i)));
 }
 
 @keyframes fill-text {
-    10%, 100% { width: 0; }
-    70%, 90% { width: 100%; }
+    0% { width: 0; }
+    50%, 90% { width: 100%; }
+    100% { width: 0; }
 }
 
 .home-info p {
@@ -462,6 +466,7 @@ section.visible {
     transform: scale(1.1);
 }
 
+/* Contact Section */
 .contact-info {
     text-align: center;
     padding: 50px;
