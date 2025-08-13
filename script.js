@@ -3,13 +3,19 @@ function toggleMenu() {
     navLinks.classList.toggle('active');
 }
 
-
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+            console.log(`Navigating to ${targetId}`);
+        } else {
+            console.error(`Target element ${targetId} not found`);
+        }
         const navLinks = document.getElementById('nav-links');
         if (navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
@@ -17,12 +23,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-
 function checkFadeIn() {
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
         const rect = section.getBoundingClientRect();
-        
         if (rect.top <= window.innerHeight * 0.8 && rect.bottom >= 0) {
             section.classList.add('visible');
             console.log(`Section ${section.id} is now visible`); 
