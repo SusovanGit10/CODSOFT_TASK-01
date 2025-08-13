@@ -22,12 +22,13 @@ function checkFadeIn() {
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
         const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100 && rect.bottom > 100) {
-            section.style.opacity = '1';
+        
+        if (rect.top <= window.innerHeight * 0.8 && rect.bottom >= 0) {
+            section.classList.add('visible');
+            console.log(`Section ${section.id} is now visible`); 
         }
     });
 }
-
 
 function debounce(func, wait) {
     let timeout;
@@ -42,8 +43,10 @@ function debounce(func, wait) {
 }
 
 window.addEventListener('scroll', debounce(checkFadeIn, 100));
-window.addEventListener('load', checkFadeIn);
-
+window.addEventListener('load', () => {
+    checkFadeIn();
+    console.log('Page loaded, checking section visibility');
+});
 
 const canvas = document.getElementById('background-canvas');
 const ctx = canvas.getContext('2d');
