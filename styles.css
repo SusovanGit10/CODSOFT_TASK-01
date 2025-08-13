@@ -5,7 +5,6 @@
     --shadow-color: rgba(0, 255, 204, 0.5);
 }
 
-
 * {
     margin: 0;
     padding: 0;
@@ -21,7 +20,6 @@ body {
     position: relative;
 }
 
-
 #background-canvas {
     position: fixed;
     top: 0;
@@ -31,7 +29,6 @@ body {
     z-index: -1;
 }
 
-/* Navbar Styles */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -52,7 +49,6 @@ body {
     text-decoration: none;
     font-family: var(--primary-font);
 }
-
 
 .navbar ul {
     list-style: none;
@@ -75,7 +71,6 @@ body {
     cursor: pointer;
     font-size: 25px;
 }
-
 
 .menu-icon {
     display: none;
@@ -107,7 +102,6 @@ body {
     }
 }
 
-
 .home {
     display: flex;
     justify-content: center;
@@ -116,8 +110,20 @@ body {
     flex-direction: column;
     text-align: center;
     padding: 80px 20px;
-    opacity: 0;
+    opacity: 1; 
+}
+
+section {
+    opacity: 1; 
     transition: opacity 0.5s ease-in;
+}
+
+section:not(.home) {
+    opacity: 0; 
+}
+
+section.visible {
+    opacity: 1; 
 }
 
 .home-info h1,
@@ -306,13 +312,10 @@ body {
     transform: scale(1.1);
 }
 
-
 .AboutMe {
     padding: 80px 20px;
     background: rgba(255, 255, 255, 0.1);
     text-align: center;
-    opacity: 0;
-    transition: opacity 0.5s ease-in;
 }
 
 .AboutMe .header h1 {
@@ -348,13 +351,10 @@ body {
     transform: scale(1.1);
 }
 
-
 .skill-info {
     padding: 80px 20px;
     background: rgba(249, 249, 249, 0.1);
     text-align: center;
-    opacity: 0;
-    transition: opacity 0.5s ease-in;
 }
 
 .skill-info .header h1 {
@@ -407,13 +407,10 @@ body {
     transition: 0.3s;
 }
 
-
 .project-info {
     padding: 80px 20px;
     background: rgba(255, 255, 255, 0.1);
     text-align: center;
-    opacity: 0;
-    transition: opacity 0.5s ease-in;
 }
 
 .project-info .header h1 {
@@ -463,14 +460,11 @@ body {
     transform: scale(1.1);
 }
 
-
 .contact-info {
     text-align: center;
     padding: 50px;
     background: rgba(34, 34, 34, 0.8);
     color: white;
-    opacity: 0;
-    transition: opacity 0.5s ease-in;
 }
 
 .contact-info h1 {
@@ -496,8 +490,6 @@ body {
     padding: 20px;
     background: rgba(34, 34, 34, 0.8);
     color: white;
-    opacity: 0;
-    transition: opacity 0.5s ease-in;
 }
 
 .footercontainer .btn-sec .sec a:hover {
