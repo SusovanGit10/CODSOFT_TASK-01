@@ -3,6 +3,7 @@ function toggleMenu() {
     navLinks.classList.toggle('active');
 }
 
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -16,7 +17,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
- function checkFadeIn() {
+
+function checkFadeIn() {
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
         const rect = section.getBoundingClientRect();
@@ -26,7 +28,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 }
 
- function debounce(func, wait) {
+
+function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
         const later = () => {
@@ -41,7 +44,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', debounce(checkFadeIn, 100));
 window.addEventListener('load', checkFadeIn);
 
- const canvas = document.getElementById('background-canvas');
+
+const canvas = document.getElementById('background-canvas');
 const ctx = canvas.getContext('2d');
 
 if (ctx) {
@@ -75,7 +79,7 @@ if (ctx) {
     }
 
     const particlesArray = [];
-    const particleCount = window.innerWidth < 768 ? 50 : 100;  
+    const particleCount = window.innerWidth < 768 ? 50 : 100; 
     for (let i = 0; i < particleCount; i++) {
         particlesArray.push(new Particle());
     }
