@@ -12,7 +12,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             targetElement.scrollIntoView({
                 behavior: 'smooth'
             });
-            console.log(`Navigating to ${targetId}`);
+            console.log(`Navigating to ${targetId}`); 
         } else {
             console.error(`Target element ${targetId} not found`);
         }
