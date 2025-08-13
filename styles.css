@@ -113,6 +113,7 @@ body {
     opacity: 1; 
 }
 
+
 section {
     opacity: 1; 
     transition: opacity 0.5s ease-in;
@@ -461,6 +462,7 @@ section.visible {
 .project-box img:hover {
     transform: scale(1.1);
 }
+
 
 .contact-info {
     text-align: center;
